@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LƯU LƯƠNG - Dịch vụ -Taxi - Xe Ghép, Tiện Chuyến Chuyên Nghiệp</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1d4ed8', // blue-700
+                        secondary: '#ea580c', // orange-600
+                        accent: '#f59e0b', // amber-500
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Hide scrollbar for clean horizontal scrolling if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="bg-primary text-white p-2 rounded-lg">
+                        <i class="fa-solid fa-car-side text-xl"></i>
+                    </div>
+                    <span class="font-bold text-2xl text-primary tracking-tight">Taxi - Xe Ghép<span class="text-secondary"> Lưu Lương</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#trang-chu" class="text-gray-700 hover:text-primary font-medium transition">Trang chủ</a>
+                    <a href="#dich-vu" class="text-gray-700 hover:text-primary font-medium transition">Dịch vụ</a>
+                    <a href="#tuyen-duong" class="text-gray-700 hover:text-primary font-medium transition">Tuyến đường</a>
+                    <a href="#lien-he" class="text-gray-700 hover:text-primary font-medium transition">Liên hệ</a>
+                    <div class="flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
+                        <i class="fa-solid fa-phone-volume text-primary animate-pulse"></i>
+                        <span class="font-bold text-primary">0399.679.926</span>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#trang-chu" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Trang chủ</a>
+                <a href="#dich-vu" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Dịch vụ</a>
+                <a href="#tuyen-duong" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Tuyến đường</a>
+                <a href="#lien-he" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Liên hệ</a>
+                <div class="mt-4 px-3">
+                    <a href="tel:0399679926" class="w-full flex items-center justify-center gap-2 bg-primary text-white px-4 py-3 rounded-lg font-bold">
+                        <i class="fa-solid fa-phone"></i> Gọi ngay: 0399.679.926
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="trang-chu" class="hero-bg min-h-screen pt-20 flex items-center relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 lg:py-0">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="text-white space-y-6">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-accent/20 border border-accent/50 text-accent font-medium text-sm backdrop-blur-sm">
+                        <i class="fa-solid fa-star text-xs mr-1"></i> Dịch vụ đặt xe uy tín số 1
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                        Xe Ghép Tiện Chuyến <br>
+                        <span class="text-accent">Giá Rẻ - Tận Nơi</span>
+                    </h1>
+                    <p class="text-lg text-gray-200 md:w-4/5">
+                        Chuyên tuyến Sân Bay ⇔ Hưng Yên ⇔ Thái Bình và các tỉnh lân cận. Xe đời mới, đón trả tận nhà, cam kết không nhồi nhét khách.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+                                <i class="fa-solid fa-shield-halved text-white"></i>
+                            </div>
+                            <span class="font-medium text-sm">An toàn tuyệt đối</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+                                <i class="fa-solid fa-wallet text-white"></i>
+                            </div>
+                            <span class="font-medium text-sm">Giá cả minh bạch</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+                                <i class="fa-solid fa-clock text-white"></i>
+                            </div>
+                            <span class="font-medium text-sm">Đúng giờ, đúng tuyến</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-8 transform transition hover:-translate-y-1">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check text-primary"></i> Đặt chuyến ngay
+                    </h2>
+                    <form id="booking-form" class="space-y-4">
+                        <!-- Location -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <label class="text-sm font-medium text-gray-700 block">Điểm đón</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fa-solid fa-location-dot text-gray-400"></i>
+                                    </div>
+                                    <input type="text" id="pickup" required placeholder="VD: Sân bay Nội Bài, HN" class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary bg-gray-50 text-gray-900 placeholder-gray-400 focus:bg-white transition">
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-sm font-medium text-gray-700 block">Điểm đến</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fa-solid fa-map-pin text-secondary"></i>
+                                    </div>
+                                    <input type="text" id="dropoff" required placeholder="VD: TP. Thái Bình" class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary bg-gray-50 text-gray-900 placeholder-gray-400 focus:bg-white transition">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Date & Time -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <label class="text-sm font-medium text-gray-700 block">Ngày đi</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fa-regular fa-calendar text-gray-400"></i>
+                                    </div>
+                                    <input type="date" id="date" required class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary bg-gray-50 text-gray-900 transition">
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-sm font-medium text-gray-700 block">Giờ đón dự kiến</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fa-regular fa-clock text-gray-400"></i>
+                                    </div>
+                                    <input type="time" id="time" required class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary bg-gray-50 text-gray-900 transition">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phone & Type -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <label class="text-sm font-medium text-gray-700 block">Số điện thoại</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fa-solid fa-phone text-gray-400"></i>
+                                    </div>
+                                    <input type="tel" id="phone" required placeholder="09xx..." class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary bg-gray-50 text-gray-900 transition">
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-sm font-medium text-gray-700 block">Loại dịch vụ</label>
+                                <div class="relative">
+                                    <select id="service-type" class="block w-full pl-3 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary bg-gray-50 text-gray-900 appearance-none transition">
+                                        <option value="xeghep">Xe ghép (4-7 chỗ)</option>
+                                        <option value="baochuyen4">Bao chuyến (Xe 4 chỗ)</option>
+                                        <option value="baochuyen7">Bao chuyến (Xe 7 chỗ)</option>
+                                        <option value="guihang">Gửi hàng hóa</option>
+                                    </select>
+                                    <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                        <i class="fa-solid fa-chevron-down text-gray-400 text-sm"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <button type="submit" class="w-full bg-secondary hover:bg-orange-700 text-white font-bold py-4 px-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex justify-center items-center gap-2 text-lg">
+                                <i class="fa-solid fa-paper-plane"></i> Tìm Chuyến & Đặt Xe
+                            </button>
+                            <p class="text-center text-xs text-gray-500 mt-3">Chúng tôi sẽ gọi lại xác nhận trong vòng 5 phút</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="dich-vu" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-secondary font-bold tracking-wider uppercase text-sm mb-2">Dịch vụ của chúng tôi</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Giải pháp di chuyển linh hoạt</h3>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-users text-3xl text-primary group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Xe Ghép Tiện Chuyến</h4>
+                    <p class="text-gray-600 mb-4">
+                        Chia sẻ hành trình để tiết kiệm chi phí lên đến 50%. Phù hợp cho 1-2 người đi liên tỉnh. Đón trả tận nhà, không bắt khách dọc đường.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Chỉ từ 200k/người</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Tối đa 3-4 khách/xe</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-car text-3xl text-secondary group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Xe Bao Chuyến (Gia đình)</h4>
+                    <p class="text-gray-600 mb-4">
+                        Sở hữu không gian riêng tư tuyệt đối cho gia đình hoặc nhóm bạn. Giờ giấc tự do, chủ động lịch trình. Xe 4 chỗ, 7 chỗ đời mới.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Không gian riêng tư</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Dừng đỗ theo yêu cầu</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-plane-departure text-3xl text-accent group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Đưa Đón Sân Bay</h4>
+                    <p class="text-gray-600 mb-4">
+                        Dịch vụ đưa đón sân bay Nội Bài, Cát Bi từ các tỉnh. Theo dõi chuyến bay để điều chỉnh giờ đón trả chuẩn xác, không lo trễ chuyến.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Hỗ trợ bê hành lý</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Phục vụ 24/7</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Routes Section -->
+    <section id="tuyen-duong" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-secondary font-bold tracking-wider uppercase text-sm mb-2">Bảng giá tham khảo</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Các tuyến đường phổ biến</h3>
+                <p class="text-gray-600">Giá có thể thay đổi nhẹ tùy vào vị trí đón trả cụ thể của quý khách.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Route 1 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="font-bold text-lg text-gray-900">Bắc Giang</span>
+                                <i class="fa-solid fa-arrow-right-arrow-left text-gray-400 text-sm"></i>
+                                <span class="font-bold text-lg text-gray-1100">Thái Bình</span>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                                <span class="text-gray-600"><i class="fa-solid fa-user text-gray-400 mr-2"></i>Xe ghép</span>
+                                <span class="font-bold text-primary">Từ 300k/ghế</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                                <span class="text-gray-600"><i class="fa-solid fa-car text-gray-400 mr-2"></i>Bao xe 4 chỗ</span>
+                                <span class="font-bold text-gray-800">Từ 900k</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2">
+                                <span class="text-gray-600"><i class="fa-solid fa-van-shuttle text-gray-400 mr-2"></i>Bao xe 7 chỗ</span>
+                                <span class="font-bold text-gray-800">Từ 900k</span>
+                            </div>
+                        </div>
+                        <button onclick="scrollToForm('Bắc Giang', 'Thái Bình')" class="mt-6 w-full bg-primary/10 hover:bg-primary text-primary hover:text-white font-medium py-2.5 rounded-lg transition-colors">
+                            Đặt tuyến này
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Route 2 -->
+                <div class="bg-white rounded-xl shadow-md border-2 border-primary relative overflow-hidden transform md:-translate-y-2">
+                    <div class="absolute top-0 right-0 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                        HOT
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="font-bold text-lg text-gray-900">Bắc Giang</span>
+                                <i class="fa-solid fa-arrow-right-arrow-left text-gray-400 text-sm"></i>
+                                <span class="font-bold text-lg text-gray-900">Hưng Yên</span>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                                <span class="text-gray-600"><i class="fa-solid fa-user text-gray-400 mr-2"></i>Xe ghép</span>
+                                <span class="font-bold text-primary">Từ 250k/ghế</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                                <span class="text-gray-600"><i class="fa-solid fa-car text-gray-400 mr-2"></i>Bao xe 4 chỗ</span>
+                                <span class="font-bold text-gray-800">Từ 550k</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2">
+                                <span class="text-gray-600"><i class="fa-solid fa-van-shuttle text-gray-400 mr-2"></i>Bao xe 7 chỗ</span>
+                                <span class="font-bold text-gray-800">Từ 700k</span>
+                            </div>
+                        </div>
+                        <button onclick="scrollToForm('Bắc Giang', 'Hưng Yên')" class="mt-6 w-full bg-primary hover:bg-blue-800 text-white font-medium py-2.5 rounded-lg transition-colors">
+                            Đặt tuyến này
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Route 3 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="font-bold text-lg text-gray-900">Nội Bài</span>
+                                <i class="fa-solid fa-arrow-right-arrow-left text-gray-400 text-sm"></i>
+                                <span class="font-bold text-lg text-gray-900">Các Tỉnh</span>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                                <span class="text-gray-600"><i class="fa-solid fa-user text-gray-400 mr-2"></i>Xe ghép</span>
+                                <span class="font-bold text-primary">Từ ***k/ghế</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                                <span class="text-gray-600"><i class="fa-solid fa-car text-gray-400 mr-2"></i>Bao xe 4 chỗ</span>
+                                <span class="font-bold text-gray-800">Từ ***k</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2">
+                                <span class="text-gray-600"><i class="fa-solid fa-van-shuttle text-gray-400 mr-2"></i>Bao xe 7 chỗ</span>
+                                <span class="font-bold text-gray-800">Từ ***k</span>
+                            </div>
+                        </div>
+                        <button onclick="scrollToForm('Sân bay Nội Bài', 'Các Tỉnh')" class="mt-6 w-full bg-primary/10 hover:bg-primary text-primary hover:text-white font-medium py-2.5 rounded-lg transition-colors">
+                            Đặt tuyến này
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-10 text-center">
+                <p class="text-gray-500 italic text-sm"><i class="fa-solid fa-circle-info mr-1"></i> Ngoài ra chúng tôi còn phục vụ các tuyến Nam Định, Hà Nam, Hải Phòng... Vui lòng liên hệ để có giá tốt nhất.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / CTA -->
+    <section class="py-20 bg-primary relative overflow-hidden">
+        <!-- Decorative bg -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+            <svg class="absolute right-0 top-0 transform translate-x-1/3 -translate-y-1/4" width="404" height="404" fill="none" viewBox="0 0 404 404"><defs><pattern id="85737c0e-0916-41d7-917f-596dc7edfa27" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="4" height="4" fill="currentColor"></rect></pattern></defs><rect width="404" height="404" fill="url(#85737c0e-0916-41d7-917f-596dc7edfa27)"></rect></svg>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div class="lg:w-2/3 text-white">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Cam kết dịch vụ </h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/20 flex-shrink-0 flex items-center justify-center">
+                                <i class="fa-solid fa-car-on text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Xe đời mới, sạch sẽ</h4>
+                                <p class="text-blue-100 text-sm">Các dòng xe Vios, Accent, Xpander, Veloz... đời 2021 trở lên, không mùi.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/20 flex-shrink-0 flex items-center justify-center">
+                                <i class="fa-solid fa-user-tie text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Tài xế chuyên nghiệp</h4>
+                                <p class="text-blue-100 text-sm">Lái xe giàu kinh nghiệm, lịch sự, nhiệt tình hỗ trợ hành khách.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/20 flex-shrink-0 flex items-center justify-center">
+                                <i class="fa-solid fa-map-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Đưa đón tận nơi</h4>
+                                <p class="text-blue-100 text-sm">Cam kết đón trả khách tận cửa, không phải đi bộ hay bắt xe ôm.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/20 flex-shrink-0 flex items-center justify-center">
+                                <i class="fa-solid fa-ban text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Không nhồi nhét</h4>
+                                <p class="text-blue-100 text-sm">Mỗi người một ghế thoải mái, tuyệt đối không chở quá số người quy định.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/3 w-full">
+                    <div class="bg-white rounded-2xl p-8 text-center shadow-2xl">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Cần xe đi ngay?</h3>
+                        <p class="text-gray-500 mb-6">Tổng đài trực 24/7. Điều xe nhanh chóng trong 15-30 phút.</p>
+                        <a href="tel:0399679926" class="inline-block w-full bg-secondary hover:bg-orange-700 text-white font-bold py-4 px-6 rounded-xl transition-colors mb-4 text-lg">
+                            <i class="fa-solid fa-phone-volume mr-2 animate-bounce"></i> Gọi: 0399.679.926
+                        </a>
+                        <a href="https://zalo.me/0399679926" target="_blank" class="inline-block w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-xl transition-colors">
+                            <i class="fa-solid fa-comment-dots mr-2"></i> Nhắn tin Zalo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="lien-he" class="bg-gray-900 text-gray-300 pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="bg-primary text-white p-2 rounded-lg">
+                            <i class="fa-solid fa-car-side text-xl"></i>
+                        </div>
+                        <span class="font-bold text-2xl text-white tracking-tight">Taxi - Xe Ghép<span class="text-secondary"> Lưu Lương</span></span>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Dịch vụ xe ghép, xe tiện chuyến hàng đầu tuyến Sân Bay - Bắc Giang -Bắc Ninh - Hưng Yên - Thái Bình. Mang đến những chuyến đi An toàn - Tiết kiệm - Nhanh chóng.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition-colors text-white">
+                            <i class="fa-solid fa-comment-dots"></i> <!-- Zalo icon placeholder -->
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Dịch Vụ</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Xe ghép liên tỉnh</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Thuê xe 4 chỗ, 7 chỗ</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Đưa đón sân bay Nội Bài</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Gửi hàng hóa hỏa tốc</a></li>
+                    </ul>
+                </div>
+
+                <!-- Routes -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Tuyến Phổ Biến</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fa-solid fa-location-dot text-xs text-gray-500"></i> Bắc Ninh - Thái Bình</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fa-solid fa-location-dot text-xs text-gray-500"></i> Bắc Giang - Hưng Yên</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fa-solid fa-location-dot text-xs text-gray-500"></i> Nội Bài - Thái Bình</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors flex items-center gap-2"><i class="fa-solid fa-location-dot text-xs text-gray-500"></i> Bắc Ninh - Các Tỉnh</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Liên Hệ</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-primary"></i>
+                            <span class="text-sm">Văn phòng đại diện: Thôn Phú Ốc, Xã Long Hưng, Tỉnh Hưng Yên</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-primary"></i>
+                            <span class="text-sm font-bold text-white">0399.679.926</span>
+                            <span class="text-sm font-bold text-white">0936.837.131</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-primary"></i>
+                            <span class="text-sm">datxe@luuluong.vn</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Taxi - Xe Ghép Lưu Lương. All rights reserved.
+                </p>
+                <div class="flex gap-4 text-sm text-gray-500">
+                    <a href="#" class="hover:text-white transition">Chính sách bảo mật</a>
+                    <a href="#" class="hover:text-white transition">Điều khoản sử dụng</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons (Mobile) -->
+    <div class="fixed bottom-4 left-4 z-40 md:hidden flex flex-col gap-3">
+        <a href="https://zalo.me/0399679926" target="_blank" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+            <i class="fa-solid fa-comment-dots text-2xl"></i>
+        </a>
+    </div>
+    <div class="fixed bottom-4 right-4 z-40 md:hidden flex flex-col gap-3">
+        <a href="tel:0399679926" class="w-14 h-14 bg-secondary text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform relative">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75 animate-ping"></span>
+            <i class="fa-solid fa-phone text-2xl relative z-10"></i>
+        </a>
+    </div>
+
+    <!-- Custom Modal for Booking Success -->
+    <div id="success-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/50 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 transform scale-95 transition-transform duration-300" id="modal-content">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fa-solid fa-check text-3xl text-green-500"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-center text-gray-900 mb-2">Đặt chuyến thành công!</h3>
+            <p class="text-center text-gray-600 mb-6" id="modal-message">
+                Cảm ơn bạn đã tin tưởng chúng tôi. Tổng đài viên sẽ gọi lại số điện thoại của bạn trong ít phút để xác nhận chuyến đi.
+            </p>
+            <div class="bg-gray-50 rounded-lg p-4 mb-6 text-sm text-gray-700 space-y-2" id="booking-details">
+                <!-- Details injected by JS -->
+            </div>
+            <button onclick="closeModal()" class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl transition-colors">
+                Đóng
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Set minimum date and time to current for inputs
+        document.addEventListener('DOMContentLoaded', () => {
+            const dateInput = document.getElementById('date');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.min = today;
+            dateInput.value = today;
+
+            const timeInput = document.getElementById('time');
+            const now = new Date();
+            const currentHours = String(now.getHours() + 1).padStart(2, '0'); // Suggest an hour from now
+            const currentMinutes = String(now.getMinutes()).padStart(2, '0');
+            timeInput.value = `${currentHours}:${currentMinutes}`;
+        });
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar shadow on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('bg-white/95');
+                nav.classList.add('bg-white');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('bg-white/95');
+                nav.classList.remove('bg-white');
+            }
+        });
+
+        // Scroll to form function from price table
+        window.scrollToForm = function(pickup, dropoff) {
+            document.getElementById('pickup').value = pickup;
+            if(dropoff) {
+                document.getElementById('dropoff').value = dropoff;
+            }
+            document.getElementById('trang-chu').scrollIntoView({ behavior: 'smooth' });
+            
+            // Highlight inputs slightly
+            setTimeout(() => {
+                document.getElementById('pickup').focus();
+            }, 800);
+        }
+
+        // Form submission & Modal handling
+        const form = document.getElementById('booking-form');
+        const modal = document.getElementById('success-modal');
+        const modalContent = document.getElementById('modal-content');
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get values
+            const pickup = document.getElementById('pickup').value;
+            const dropoff = document.getElementById('dropoff').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service-type');
+            const serviceText = service.options[service.selectedIndex].text;
+
+            // Format date for display
+            const dateObj = new Date(date);
+            const dateStr = `${String(dateObj.getDate()).padStart(2, '0')}/${String(dateObj.getMonth() + 1).padStart(2, '0')}/${dateObj.getFullYear()}`;
+
+            // Inject details into modal
+            const detailsHtml = `
+                <div class="flex justify-between border-b border-gray-200 pb-2">
+                    <span class="text-gray-500">Tuyến:</span>
+                    <span class="font-semibold text-right">${pickup} <i class="fa-solid fa-arrow-right text-xs mx-1"></i> ${dropoff}</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-200 py-2">
+                    <span class="text-gray-500">Thời gian:</span>
+                    <span class="font-semibold">${time} - ${dateStr}</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-200 py-2">
+                    <span class="text-gray-500">Loại xe:</span>
+                    <span class="font-semibold text-primary">${serviceText}</span>
+                </div>
+                <div class="flex justify-between pt-2">
+                    <span class="text-gray-500">SĐT Liên hệ:</span>
+                    <span class="font-semibold">${phone}</span>
+                </div>
+            `;
+            document.getElementById('booking-details').innerHTML = detailsHtml;
+
+            // Show modal
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Animate in
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+
+            // Reset form
+            form.reset();
+            // Reset dates to current
+            document.getElementById('date').value = new Date().toISOString().split('T')[0];
+        });
+
+        window.closeModal = function() {
+            // Animate out
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+
+        // Close modal if clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
