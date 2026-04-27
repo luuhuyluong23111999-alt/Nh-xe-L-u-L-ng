@@ -628,12 +628,95 @@
         }
 
         // Form submission & Modal handling
-        const form = document.getElementById('booking-form');
-        const modal = document.getElementById('success-modal');
-        const modalContent = document.getElementById('modal-content');
-        
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
+        // Cấu hình Telegram (Điền thông tin của bạn vào đây)
+const TELEGRAM_TOKEN = "8782378414:AAEHytTWlH1ARH05zHbF62ucEdJH4671b8s ";
+const TELEGRAM_CHAT_ID = "7729221768 ";
+
+// Form submission & Modal handling
+const form = document.getElementById('booking-form');
+const modal = document.getElementById('success-modal');
+const modalContent = document.getElementById('modal-content');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Lấy giá trị từ các ô nhập liệu
+    const pickup = document.getElementById('pickup').value;
+    const dropoff = document.getElementById('dropoff').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const phone = document.getElementById('phone').value;
+    const service = document.getElementById('service-type');
+    const serviceText = service.options[service.selectedIndex].text;
+
+    // 1. Chuẩn bị nội dung tin nhắn gửi về Telegram
+    const dateObj = new Date(date);
+    const dateStr = ${String(dateObj.getDate()).padStart(2, '0')}/${String(dateObj.getMonth() + 1).padStart(2, '0')}/${dateObj.getFullYear()};
+    
+    const messageTelegram = 
+🚕 **KHÁCH ĐẶT XE MỚI** 🚕
+-------------------------
+📍 **Điểm đón:** ${pickup}
+🏁 **Điểm đến:** ${dropoff}
+⏰ **Thời gian:** ${time} ngày ${dateStr}
+📞 **Số điện thoại:** ${phone}
+🚗 **Loại dịch vụ:** ${serviceText}
+-------------------------
+    ;
+
+    // 2. Gửi dữ liệu sang Telegram API
+    const telegramUrl = https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage;
+    
+    fetch(telegramUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: messageTelegram,
+            parse_mode: "Markdown"
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log("Đã gửi thông báo tới Telegram");
+        }
+    })
+    .catch(error => console.error("Lỗi gửi Telegram:", error));
+
+    // 3. Hiển thị Modal thông báo trên giao diện web (Giữ nguyên logic cũ của bạn)
+    const detailsHtml = 
+        <div class="flex justify-between border-b border-gray-200 pb-2">
+            <span class="text-gray-500">Tuyến:</span>
+            <span class="font-semibold text-right">${pickup} <i class="fa-solid fa-arrow-right text-xs mx-1"></i> ${dropoff}</span>
+        </div>
+        <div class="flex justify-between border-b border-gray-200 py-2">
+            <span class="text-gray-500">Thời gian:</span>
+            <span class="font-semibold">${time} - ${dateStr}</span>
+        </div>
+        <div class="flex justify-between border-b border-gray-200 py-2">
+            <span class="text-gray-500">Loại xe:</span>
+            <span class="font-semibold text-primary">${serviceText}</span>
+        </div>
+        <div class="flex justify-between pt-2">
+            <span class="text-gray-500">SĐT Liên hệ:</span>
+            <span class="font-semibold">${phone}</span>
+        </div>
+    ;
+    document.getElementById('booking-details').innerHTML = detailsHtml;
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    
+    setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modal.classList.add('opacity-100');
+        modalContent.classList.remove('scale-95');
+        modalContent.classList.add('scale-100');
+    }, 10);
+
+    form.reset();
+    document.getElementById('date').value = new Date().toISOString().split('T')[0];
+});
             
             // Get values
             const pickup = document.getElementById('pickup').value;
@@ -708,4 +791,4 @@
         });
     </script>
 </body>
-</html>
+    </html>
