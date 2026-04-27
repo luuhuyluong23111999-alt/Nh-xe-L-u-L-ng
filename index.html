@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LƯU LƯƠNG - Dịch vụ -Taxi - Xe Ghép, Tiện Chuyến Chuyên Nghiệp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1d4ed8',
+                        secondary: '#ea580c',
+                        accent: '#f59e0b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md h-20 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 w-full flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="bg-primary text-white p-2 rounded-lg">
+                    <i class="fa-solid fa-car-side text-xl"></i>
+                </div>
+                <span class="font-bold text-2xl text-primary">Taxi - Xe Ghép<span class="text-secondary"> Lưu Lương</span></span>
+            </div>
+            <div class="hidden md:block font-bold text-primary">0399.679.926</div>
+        </div>
+    </nav>
+
+    <section id="trang-chu" class="hero-bg min-h-screen pt-20 flex items-center relative">
+        <div class="max-w-7xl mx-auto px-4 w-full py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white space-y-6">
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight">Xe Ghép Tiện Chuyến <br><span class="text-accent">Giá Rẻ - Tận Nơi</span></h1>
+                    <p class="text-lg text-gray-200">Phục vụ chuyên nghiệp - Đón trả tận nhà.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check text-primary"></i> Đặt chuyến ngay
+                    </h2>
+                    <form id="booking-form" class="space-y-4">
+                        <div class="space-y-1">
+                            <label class="text-sm font-medium text-gray-700 block">Họ và tên khách hàng</label>
+                            <input type="text" id="customer-name" required placeholder="Nhập tên của bạn" class="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary bg-gray-50">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <label class="text-sm font-medium text-gray-700 block">Điểm đón</label>
+                                <input type="text" id="pickup" required placeholder="VD: Sân bay Nội Bài" class="block w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-sm font-medium text-gray-700 block">Điểm đến</label>
+                                <input type="text" id="dropoff" required placeholder="VD: TP. Thái Bình" class="block w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="date" id="date" required class="block w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50">
+                            <input type="time" id="time" required class="block w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50">
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="tel" id="phone" required placeholder="Số điện thoại liên hệ" class="block w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50">
+                            <select id="service-type" class="block w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50">
+                                <option value="xeghep">Xe ghép (4-7 chỗ)</option>
+                                <option value="baochuyen4">Bao chuyến (Xe 4 chỗ)</option>
+                                <option value="baochuyen7">Bao chuyến (Xe 7 chỗ)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-secondary hover:bg-orange-700 text-white font-bold py-4 rounded-lg shadow-lg text-lg transition">
+                            Gửi yêu cầu đặt xe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="success-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/50 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold text-center mb-2 text-green-600">Thành công!</h3>
+            <div id="booking-details" class="bg-gray-50 p-4 rounded-lg mb-6 text-sm space-y-2"></div>
+            <button onclick="closeModal()" class="w-full bg-primary text-white py-3 rounded-xl font-bold">Đóng</button>
+        </div>
+    </div>
+
+    <script>
+        const TELEGRAM_TOKEN = "8782378414:AAEHytTWlH1ARH05zHbF62ucEdJH4671b8s";
+        const TELEGRAM_CHAT_ID = "7729221768";
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('date').value = new Date().toISOString().split('T')[0];
+        });
+
+        const form = document.getElementById('booking-form');
+        const modal = document.getElementById('success-modal');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Lấy dữ liệu từ ô Tên khách hàng mới thêm
+            const customerName = document.getElementById('customer-name').value;
+            const pickup = document.getElementById('pickup').value;
+            const dropoff = document.getElementById('dropoff').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service-type');
+            const serviceText = service.options[service.selectedIndex].text;
+
+            const messageTelegram = `
+👤 *KHÁCH ĐẶT:* ${customerName}
+📞 *SĐT:* ${phone}
+-------------------------
+📍 *Đón:* ${pickup}
+🏁 *Đến:* ${dropoff}
+⏰ *Giờ:* ${time} | ${date}
+🚗 *Loại xe:* ${serviceText}
+-------------------------
+            `;
+
+            fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: messageTelegram,
+                    parse_mode: "Markdown"
+                })
+            });
+
+            document.getElementById('booking-details').innerHTML = `
+                <p><b>Khách hàng:</b> ${customerName}</p>
+                <p><b>Lộ trình:</b> ${pickup} → ${dropoff}</p>
+                <p><b>Dịch vụ:</b> ${serviceText}</p>
+                <p class="mt-4 text-primary italic font-medium">Nhà xe Lưu Lương sẽ gọi lại cho quý khách ngay!</p>
+            `;
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            form.reset();
+            document.getElementById('date').value = new Date().toISOString().split('T')[0];
+        });
+
+        window.closeModal = function() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    </script>
+</body>
+</html>
