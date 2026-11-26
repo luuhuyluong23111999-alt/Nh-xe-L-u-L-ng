@@ -59,17 +59,19 @@ footer{background:var(--navy);color:#b9c8da;text-align:center;padding:22px 14px;
      <div class="field full">
       <div class="addressbox">
        <h3>📍 Điểm đón</h3>
-       <div class="field"><label for="fromProvince">Tỉnh / Thành phố *</label><input id="fromProvince" required list="provinces" placeholder="Nhập tỉnh/thành phố"></div>
-       <div class="field"><label for="fromDistrict">Quận / Huyện / Khu vực</label><input id="fromDistrict" placeholder="Ví dụ: Hưng Hà"></div>
-       <div class="field" style="grid-column:1/-1"><label for="fromCommune">Xã / Phường, địa chỉ cụ thể *</label><input id="fromCommune" required placeholder="Nhập xã/phường, số nhà, điểm đón"></div>
+       <div class="field"><label for="fromProvince">Tỉnh / Thành phố *</label><select id="fromProvince" required><option value="">Đang tải danh sách tỉnh/thành…</option></select></div>
+       <div class="field"><label for="fromDistrict">Quận / Huyện *</label><select id="fromDistrict" required disabled><option value="">Chọn tỉnh trước</option></select></div>
+       <div class="field"><label for="fromCommune">Xã / Phường / Thị trấn *</label><select id="fromCommune" required disabled><option value="">Chọn huyện trước</option></select></div>
+       <div class="field"><label for="fromAddress">Số nhà, đường, thôn/xóm (nếu có)</label><input id="fromAddress" placeholder="Nhập số nhà, tên đường, thôn/xóm…"></div>
       </div>
      </div>
      <div class="field full">
       <div class="addressbox">
        <h3>🏁 Điểm trả</h3>
-       <div class="field"><label for="toProvince">Tỉnh / Thành phố *</label><input id="toProvince" required list="provinces" placeholder="Nhập tỉnh/thành phố"></div>
-       <div class="field"><label for="toDistrict">Quận / Huyện / Khu vực</label><input id="toDistrict" placeholder="Nhập khu vực"></div>
-       <div class="field" style="grid-column:1/-1"><label for="toCommune">Xã / Phường, địa chỉ cụ thể *</label><input id="toCommune" required placeholder="Nhập xã/phường, số nhà, điểm trả"></div>
+       <div class="field"><label for="toProvince">Tỉnh / Thành phố *</label><select id="toProvince" required><option value="">Đang tải danh sách tỉnh/thành…</option></select></div>
+       <div class="field"><label for="toDistrict">Quận / Huyện *</label><select id="toDistrict" required disabled><option value="">Chọn tỉnh trước</option></select></div>
+       <div class="field"><label for="toCommune">Xã / Phường / Thị trấn *</label><select id="toCommune" required disabled><option value="">Chọn huyện trước</option></select></div>
+       <div class="field"><label for="toAddress">Số nhà, đường, thôn/xóm (nếu có)</label><input id="toAddress" placeholder="Nhập số nhà, tên đường, thôn/xóm…"></div>
       </div>
      </div>
      <div class="field"><label for="date">Ngày đi *</label><input type="date" id="date" required></div>
@@ -92,7 +94,7 @@ footer{background:var(--navy);color:#b9c8da;text-align:center;padding:22px 14px;
     <div class="pricebox" id="priceBox"><strong id="priceText">Giá chuyến sẽ tự động hiển thị khi chọn tuyến và dịch vụ</strong><small id="priceNote">Hệ thống tự tính giá theo tuyến và loại dịch vụ bạn chọn. Với tuyến cần báo giá riêng, tài xế sẽ liên hệ xác nhận.</small></div>
     <div id="formStatus" class="status"></div>
     <button class="btn btn-gold" style="width:100%" type="submit">GỬI YÊU CẦU ĐẶT XE</button>
-    <div class="hint" style="margin-top:9px">Bản xem thử HTML: dữ liệu đặt xe được lưu trong trình duyệt trên thiết bị này.</div>
+    <div class="hint" style="margin-top:9px">Danh mục địa chỉ cũ tải tự động khi có Internet. Giá hiển thị sau khi chọn đủ điểm đón, điểm trả và dịch vụ. Đơn được lưu trên thiết bị này; sau khi gửi, website mở Zalo và sao chép sẵn nội dung đơn để khách dán và bấm Gửi.</div>
    </form>
   </section>
 
@@ -129,6 +131,7 @@ footer{background:var(--navy);color:#b9c8da;text-align:center;padding:22px 14px;
  <option value="Thái Bình"><option value="Hà Nội"><option value="Hải Phòng"><option value="Quảng Ninh">
  <option value="Bắc Ninh"><option value="Bắc Giang"><option value="Nam Định"><option value="Hà Nam"><option value="Hưng Yên">
 </datalist>
+<div class="hint" id="legacyAddressStatus" style="margin:8px 0 14px">Đang tải danh mục địa chỉ hành chính cũ 63 tỉnh/thành → quận/huyện → xã/phường… Cần kết nối Internet lần đầu.</div>
 
 <div class="modal" id="adminModal">
  <div class="modalbox">
@@ -140,7 +143,7 @@ footer{background:var(--navy);color:#b9c8da;text-align:center;padding:22px 14px;
    <div id="adminMsg" class="status"></div>
   </div>
   <div id="adminPanel" style="display:none">
-   <div class="notice">Bản HTML độc lập chỉ lưu dữ liệu trên thiết bị hiện tại. Chưa kết nối máy chủ hoặc Telegram. Không dùng bản này để lưu dữ liệu khách thật cho đến khi triển khai backend bảo mật.</div>
+   <div class="notice">Bản HTML độc lập lưu đơn trên trình duyệt/thiết bị hiện tại. Đơn không tự đồng bộ sang máy khác. Khi khách đặt xe, website mở Zalo và chuẩn bị nội dung để khách dán, bấm Gửi; Zalo không cho website tự gửi tin nhắn thay khách.</div>
    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
     <b id="bookingCount">0 đơn</b><button class="btn btn-light" id="adminLogout">Đăng xuất</button>
    </div>
@@ -153,13 +156,99 @@ footer{background:var(--navy);color:#b9c8da;text-align:center;padding:22px 14px;
 const STORE='dvx50_bookings_v1', PASS='dvx50_admin_hash_v1';
 const $=id=>document.getElementById(id);
 const norm=s=>(s||'').toLocaleLowerCase('vi').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').trim();
+// Danh mục địa giới hành chính cũ 63 tỉnh/thành (trước 01/07/2025).
+// Dùng API phân trang có cấu trúc {success,data,metadata}; không dùng API cũ
+// provinces.open-api.vn vốn đã chuyển sang danh mục 34 tỉnh/thành mới.
+let legacyAddressData=[];
+const ADDRESS_API='https://www.tinhthanhpho.com/api/v1';
+const ADDRESS_CACHE='xe_ghep_luu_luong_legacy_address_v2';
+const addressCache=(()=>{try{return JSON.parse(localStorage.getItem(ADDRESS_CACHE)||'{}')}catch(e){return {}}})();
+function saveAddressCache(){try{localStorage.setItem(ADDRESS_CACHE,JSON.stringify(addressCache))}catch(e){}}
+function fillSelect(select,items,placeholder){
+ select.innerHTML='';const first=document.createElement('option');first.value='';first.textContent=placeholder;select.appendChild(first);
+ items.forEach(item=>{const o=document.createElement('option');o.value=item.value;o.textContent=item.label;select.appendChild(o);});
+}
+async function getAddressJson(url){
+ const r=await fetch(url,{headers:{'Accept':'application/json'},cache:'no-store'});
+ if(!r.ok)throw new Error('Máy chủ địa chỉ trả về HTTP '+r.status);
+ const j=await r.json();
+ if(j && j.success===false)throw new Error(j.message||'Nguồn địa chỉ báo lỗi');
+ return Array.isArray(j)?j:(Array.isArray(j.data)?j.data:[]);
+}
+async function cachedAddress(key,url){
+ if(addressCache[key] && Array.isArray(addressCache[key]))return addressCache[key];
+ const data=await getAddressJson(url);addressCache[key]=data;saveAddressCache();return data;
+}
+function setupAddressSide(side){
+ const province=$(side+'Province'),district=$(side+'District'),commune=$(side+'Commune');
+ province.addEventListener('change',async()=>{
+  const p=legacyAddressData.find(x=>String(x.code)===province.value);
+  fillSelect(district,[],'Đang tải quận / huyện…');district.disabled=true;
+  fillSelect(commune,[],'Chọn huyện trước');commune.disabled=true;updatePrice();
+  if(!p)return;
+  try{
+   const rows=await cachedAddress('d_'+p.code,`${ADDRESS_API}/provinces/${encodeURIComponent(p.code)}/districts?limit=100&page=1`);
+   p.districts=rows;
+   fillSelect(district,rows.slice().sort((a,b)=>a.name.localeCompare(b.name,'vi')).map(d=>({value:String(d.code),label:(d.type?d.type+' ':'')+d.name})),'Chọn quận / huyện');
+   district.disabled=false;
+  }catch(err){fillSelect(district,[],'Không tải được huyện');$('legacyAddressStatus').textContent='Không tải được danh sách quận/huyện: '+err.message;}
+  updatePrice();
+ });
+ district.addEventListener('change',async()=>{
+  const p=legacyAddressData.find(x=>String(x.code)===province.value),d=(p?.districts||[]).find(x=>String(x.code)===district.value);
+  fillSelect(commune,[],'Đang tải xã / phường…');commune.disabled=true;updatePrice();
+  if(!d)return;
+  try{
+   const rows=await cachedAddress('w_'+d.code,`${ADDRESS_API}/districts/${encodeURIComponent(d.code)}/wards?limit=500&page=1`);
+   d.wards=rows;
+   fillSelect(commune,rows.slice().sort((a,b)=>a.name.localeCompare(b.name,'vi')).map(w=>({value:w.name,label:(w.type? w.type+' ':'')+w.name})),'Chọn xã / phường / thị trấn');
+   commune.disabled=false;
+  }catch(err){fillSelect(commune,[],'Không tải được xã/phường');$('legacyAddressStatus').textContent='Không tải được danh sách xã/phường: '+err.message;}
+  updatePrice();
+ });
+ commune.addEventListener('change',updatePrice);
+}
+async function loadLegacyAddressData(){
+ const status=$('legacyAddressStatus');
+ // Khôi phục danh sách tỉnh đã lưu trước đó để dropdown không bị trống khi mở lại.
+ if(Array.isArray(addressCache.provinces)&&addressCache.provinces.length>=60){
+  legacyAddressData=addressCache.provinces;
+  ['from','to'].forEach(side=>{
+   fillSelect($(side+'Province'),legacyAddressData.slice().sort((a,b)=>a.name.localeCompare(b.name,'vi')).map(p=>({value:String(p.code),label:(p.type?p.type+' ':'')+p.name})),'Chọn tỉnh / thành phố');
+   setupAddressSide(side);$(side+'Province').dataset.addressReady='1';
+  });
+  status.textContent='Đã nạp danh sách 63 tỉnh/thành cũ từ bộ nhớ thiết bị. Chọn tỉnh để tải huyện, sau đó chọn huyện để tải xã/phường.';
+ }
+ try{
+  const rows=await cachedAddress('provinces',`${ADDRESS_API}/provinces?limit=100&page=1`);
+  if(!Array.isArray(rows)||rows.length<60)throw new Error('Nguồn dữ liệu không trả về đủ 63 tỉnh/thành cũ.');
+  legacyAddressData=rows;
+  ['from','to'].forEach(side=>{
+   const sel=$(side+'Province');
+   // Tránh đăng ký listener lần hai nếu đã khôi phục từ cache.
+   if(!sel.dataset.addressReady) {setupAddressSide(side);sel.dataset.addressReady='1';}
+   fillSelect(sel,rows.slice().sort((a,b)=>a.name.localeCompare(b.name,'vi')).map(p=>({value:String(p.code),label:(p.type?p.type+' ':'')+p.name})),'Chọn tỉnh / thành phố');
+  });
+  status.textContent=`Đã tải thành công ${rows.length} tỉnh/thành cũ. Chọn tỉnh → huyện → xã/phường ở cả điểm đón và điểm trả.`;
+ }catch(error){
+  status.textContent='Chưa tải được danh mục địa chỉ 63 tỉnh/thành. Hãy mở lại khi có Internet. Chi tiết: '+error.message;
+  ['from','to'].forEach(side=>{
+   const sel=$(side+'Province');
+   if(!sel.dataset.addressReady){setupAddressSide(side);sel.dataset.addressReady='1';}
+   if(!sel.options.length||sel.options.length===1)fillSelect(sel,[],'Không tải được — nhấn tải lại trang');
+  });
+ }
+}
+
 const getBookings=()=>{try{return JSON.parse(localStorage.getItem(STORE)||'[]')}catch(e){return []}};
 const saveBookings=a=>localStorage.setItem(STORE,JSON.stringify(a));
 const fmt=n=>new Intl.NumberFormat('vi-VN').format(n)+'đ';
-const routeText=()=>[$('fromProvince').value,$('fromDistrict').value,$('fromCommune').value,$('toProvince').value,$('toDistrict').value,$('toCommune').value].join(' ');
+loadLegacyAddressData();
+const selectedAddressName=id=>{const el=$(id);return (el.selectedOptions[0]?.textContent||'').replace(/^(Tỉnh|Thành phố|Quận|Huyện|Thị xã) /,'');};
+const routeText=()=>[selectedAddressName('fromProvince'),selectedAddressName('fromDistrict'),$('fromCommune').value,selectedAddressName('toProvince'),selectedAddressName('toDistrict'),$('toCommune').value].join(' ');
 function routePrice(){
- const a=norm($('fromProvince').value+' '+$('fromDistrict').value+' '+$('fromCommune').value);
- const b=norm($('toProvince').value+' '+$('toDistrict').value+' '+$('toCommune').value);
+ const a=norm(selectedAddressName('fromProvince')+' '+selectedAddressName('fromDistrict')+' '+$('fromCommune').value);
+ const b=norm(selectedAddressName('toProvince')+' '+selectedAddressName('toDistrict')+' '+$('toCommune').value);
  const all=a+' '+b, s=$('service').value;
  const has=(x)=>all.includes(norm(x));
  const tb=has('thai binh'), hn=has('ha noi'), nb=has('noi bai'), hp=has('hai phong'), qn=has('quang ninh'), bn=has('bac ninh'), bg=has('bac giang'), nd=has('nam dinh'), ham=has('ha nam'), hy=has('hung yen');
@@ -209,10 +298,17 @@ function routePrice(){
  return {title,note};
 }
 function updatePrice(){
- const p=routePrice();$('priceText').textContent='Giá chuyến: '+p.title;$('priceNote').textContent=p.note+' Giá được tính tự động theo tuyến và dịch vụ đã chọn. Tuyến báo giá riêng sẽ được tài xế liên hệ.';
+ const ready=$('fromProvince').value && $('fromDistrict').value && $('fromCommune').value && $('toProvince').value && $('toDistrict').value && $('toCommune').value && $('service').value;
+ if(!ready){
+  $('priceText').textContent='Chọn đủ tỉnh, huyện, xã ở điểm đón và điểm trả cùng loại dịch vụ để xem giá';
+  $('priceNote').textContent='Khi chọn đủ tuyến đường và dịch vụ, hệ thống sẽ tự hiển thị giá tham khảo. Tuyến chưa có giá sẽ ghi rõ chờ tài xế báo giá.';
+  return;
+ }
+ const p=routePrice();$('priceText').textContent='Giá chuyến: '+p.title;$('priceNote').textContent=p.note+' Giá được tính theo tuyến và loại dịch vụ đã chọn. Tuyến báo giá riêng sẽ được tài xế liên hệ.';
 }
-['fromProvince','fromDistrict','fromCommune','toProvince','toDistrict','toCommune','service'].forEach(id=>$(id).addEventListener('input',updatePrice));
-$('service').addEventListener('change',updatePrice);
+['fromProvince','fromDistrict','fromCommune','toProvince','toDistrict','toCommune','fromAddress','toAddress','service'].forEach(id=>{
+ $(id).addEventListener('input',updatePrice);$(id).addEventListener('change',updatePrice);
+});
 function showStatus(el,msg,type){el.className='status '+type;el.textContent=msg}
 $('shareLocationBtn').addEventListener('click',()=>{
  const status=$('locationStatus');
@@ -237,8 +333,8 @@ $('bookingForm').addEventListener('submit',e=>{
  const p=routePrice();
  const order={
   code:'DVX-'+Math.floor(100000+Math.random()*900000),name:$('name').value.trim(),phone,
-  fromProvince:$('fromProvince').value.trim(),fromDistrict:$('fromDistrict').value.trim(),fromCommune:$('fromCommune').value.trim(),
-  toProvince:$('toProvince').value.trim(),toDistrict:$('toDistrict').value.trim(),toCommune:$('toCommune').value.trim(),
+  fromProvince:$('fromProvince').selectedOptions[0]?.textContent.replace(/^(Tỉnh|Thành phố) /,'')||'',fromDistrict:$('fromDistrict').selectedOptions[0]?.textContent.replace(/^(Quận|Huyện|Thị xã|Thành phố) /,'')||'',fromCommune:$('fromCommune').value.trim(),fromAddress:$('fromAddress').value.trim(),
+  toProvince:$('toProvince').selectedOptions[0]?.textContent.replace(/^(Tỉnh|Thành phố) /,'')||'',toDistrict:$('toDistrict').selectedOptions[0]?.textContent.replace(/^(Quận|Huyện|Thị xã|Thành phố) /,'')||'',toCommune:$('toCommune').value.trim(),toAddress:$('toAddress').value.trim(),
   date:$('date').value,time:$('time').value,service:$('service').value,note:$('note').value.trim(),
   price:p.title,priceNote:p.note,
   currentLat:$('currentLat').value||'',currentLng:$('currentLng').value||'',
@@ -248,11 +344,25 @@ $('bookingForm').addEventListener('submit',e=>{
  const collision=arr.some(x=>x.status!=='Đã hủy'&&x.date===order.date&&routeKey(x)===routeKey(order)&&Math.abs((+new Date(x.date+'T'+x.time))-(+new Date(order.date+'T'+order.time)))<=90*60000);
  if(collision)order.status='Chờ lái xe nhận';
  arr.unshift(order);saveBookings(arr);
- const msg=`Đặt xe thành công. Mã chuyến: ${order.code}. Trạng thái: ${order.status}. Giá chuyến: ${order.price}. Vui lòng lưu mã chuyến để tra cứu/hủy chuyến.`;
+ const msg=`Đã lưu đơn đặt xe trên thiết bị này. Mã chuyến: ${order.code}. Trạng thái: ${order.status}. Giá chuyến: ${order.price}. Nội dung đơn đã được chuẩn bị để gửi qua Zalo.`;
  showStatus($('formStatus'),msg,collision?'wait':'ok');
- const summary=`DỊCH VỤ XE 5.0\nMã: ${order.code}\nKhách: ${order.name}\nSĐT: ${order.phone}\nĐón: ${order.fromProvince} ${order.fromDistrict} ${order.fromCommune}\nTrả: ${order.toProvince} ${order.toDistrict} ${order.toCommune}\nThời gian: ${order.date} ${order.time}\nDịch vụ: ${order.service}\nGiá: ${order.price}\nVị trí hiện tại: ${order.currentLat&&order.currentLng?`https://www.google.com/maps/search/?api=1&query=${order.currentLat}%2C${order.currentLng}`:'Khách chưa chia sẻ'}\nTrạng thái: ${order.status}`;
- if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(summary).catch(()=>{});
+ const summary=`XE GHÉP LƯU LƯƠNG – YÊU CẦU ĐẶT XE\nMã chuyến: ${order.code}\nKhách hàng: ${order.name}\nSố điện thoại: ${order.phone}\nĐiểm đón: ${order.fromProvince}, ${order.fromDistrict}, ${order.fromCommune} ${order.fromAddress}\nĐiểm trả: ${order.toProvince}, ${order.toDistrict}, ${order.toCommune} ${order.toAddress}\nNgày giờ: ${order.date} ${order.time}\nDịch vụ: ${order.service}\nGIÁ CHUYẾN: ${order.price}\nGhi chú giá: ${order.priceNote}\nVị trí GPS: ${order.currentLat&&order.currentLng?`https://www.google.com/maps/search/?api=1&query=${order.currentLat}%2C${order.currentLng}`:'Khách chưa chia sẻ'}\nTrạng thái: ${order.status}`;
+ // Mở cuộc trò chuyện Zalo ngay sau khi lưu đơn; trình duyệt không cho website tự bấm nút Gửi thay khách.
+ const zaloUrl='https://zalo.me/0399679926';
+ const zaloTab=window.open(zaloUrl,'_blank','noopener');
+ const copyText=async()=>{
+  try{await navigator.clipboard.writeText(summary);return true;}catch(err){
+   try{const ta=document.createElement('textarea');ta.value=summary;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();const ok=document.execCommand('copy');ta.remove();return ok;}catch(e){return false;}
+  }
+ };
+ copyText().then(ok=>{
+  const extra=document.createElement('div');extra.style.marginTop='10px';
+  const info=document.createElement('div');info.className='hint';info.textContent=ok?'Đã sao chép nội dung đơn (kèm giá). Mở Zalo và dán vào khung chat rồi bấm Gửi.':'Đơn đã lưu. Hãy dùng nút bên dưới để mở Zalo; bạn có thể xem lại đơn trong quản trị.';
+  const link=document.createElement('a');link.className='btn btn-gold';link.href=zaloUrl;link.target='_blank';link.rel='noopener';link.textContent='MỞ ZALO GỬI ĐƠN ĐẶT XE';link.style.marginTop='8px';
+  extra.append(info,link);$('formStatus').appendChild(extra);
+ });
  $('bookingForm').reset();
+ ['from','to'].forEach(side=>{ $(side+'District').disabled=true;$(side+'Commune').disabled=true;fillSelect($(side+'District'),[],'Chọn tỉnh trước');fillSelect($(side+'Commune'),[],'Chọn huyện trước'); });
  $('locationStatus').textContent='Bấm nút và cho phép trình duyệt truy cập vị trí. Tọa độ sẽ được gửi kèm đơn để tài xế mở trên Google Maps.';
  updatePrice();
  $('cancelCode').value=order.code;$('cancelPhone').value=order.phone;
@@ -292,7 +402,7 @@ function renderAdmin(){
   const div=document.createElement('div');div.className='adminrow';
   const status=document.createElement('select');['Đã tiếp nhận chuyến','Chờ lái xe nhận','Chờ báo giá','Đã xác nhận','Đang thực hiện','Hoàn thành','Đã hủy'].forEach(v=>{const op=document.createElement('option');op.value=v;op.textContent=v;if(o.status===v)op.selected=true;status.appendChild(op)});
   status.onchange=()=>{const a=getBookings();a[idx].status=status.value;saveBookings(a)};
-  const p=document.createElement('p');p.innerHTML=`<b>${o.code}</b> · ${o.name} · <b>${o.phone}</b><br>${o.fromProvince} ${o.fromDistrict} ${o.fromCommune} → ${o.toProvince} ${o.toDistrict} ${o.toCommune}<br>${o.date} ${o.time} · ${o.service}<br>Giá: ${o.price}<br>Ghi chú: ${o.note||'—'}`;
+  const p=document.createElement('p');p.innerHTML=`<b>${o.code}</b> · ${o.name} · <b>${o.phone}</b><br>${o.fromProvince} ${o.fromDistrict} ${o.fromCommune} ${o.fromAddress||''} → ${o.toProvince} ${o.toDistrict} ${o.toCommune} ${o.toAddress||''}<br>${o.date} ${o.time} · ${o.service}<br>Giá: ${o.price}<br>Ghi chú: ${o.note||'—'}`;
   div.appendChild(p);
   if(o.currentLat&&o.currentLng){
    const mapLink=document.createElement('a');
@@ -313,4 +423,4 @@ const today=new Date();$('date').min=new Date(today.getTime()-today.getTimezoneO
 updatePrice();
 </script>
 </body>
-</html>
+  </html>
