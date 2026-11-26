@@ -12,18 +12,17 @@ a{color:inherit}.topbar{background:var(--navy);color:#fff;padding:13px 18px;disp
 .brand{font-weight:900;letter-spacing:.08em;font-size:17px}.brand span{color:var(--gold)}.toplinks{display:flex;gap:8px;flex-wrap:wrap}.toplinks a{font-size:12px;text-decoration:none;border:1px solid #53657b;padding:7px 10px;border-radius:30px}
 .hero{background-image:linear-gradient(#35d6e80a 1px,transparent 1px),linear-gradient(90deg,#35d6e80a 1px,transparent 1px),radial-gradient(ellipse at 82% 18%,#087f91 0,transparent 31%),radial-gradient(ellipse at 12% 100%,#123f58 0,transparent 42%),linear-gradient(125deg,#050d14,#102b3a 58%,#07131d);color:#fff;padding:46px 18px 38px;position:relative;overflow:hidden;background-size:42px 42px,42px 42px,auto,auto,auto}
 .hero:after{content:"";position:absolute;width:340px;height:340px;border:1px solid #35d6e855;border-radius:50%;right:-95px;bottom:-220px;box-shadow:0 0 0 22px #35d6e814,0 0 0 48px #35d6e80c,0 0 70px #35d6e822;pointer-events:none}
-.wrap{max-width:1050px;margin:auto}.eyebrow{color:var(--gold);font-weight:800;letter-spacing:.18em;font-size:12px}.hero h1{font-size:clamp(30px,6vw,54px);line-height:1.04;margin:12px 0}.hero h1 em{font-style:normal;color:var(--gold)}.hero p{max-width:620px;color:#d9e4f2;line-height:1.6;margin:12px 0 22px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:12px 17px;font-weight:800;text-decoration:none;cursor:pointer}.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#06202a;box-shadow:0 6px 22px #35d6e833}.btn-outline{border:1px solid #8296af;color:#fff;background:#ffffff0b}.btn-dark{background:var(--navy);color:#fff}.btn-light{background:#edf2f8;color:var(--ink)}.btn-danger{background:#fff0f0;color:var(--red)}
+.wrap{max-width:1050px;margin:auto}.eyebrow{color:var(--gold);font-weight:800;letter-spacing:.18em;font-size:12px}.hero h1{font-size:clamp(30px,6vw,54px);line-height:1.04;margin:12px 0}.hero h1 em{font-style:normal;color:var(--gold)}.hero p{max-width:620px;color:#d9e4f2;line-height:1.6;margin:12px 0 22px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:12px 17px;font-weight:800;text-decoration:none;cursor:pointer}.btn:disabled{opacity:.6;cursor:not-allowed}.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#06202a;box-shadow:0 6px 22px #35d6e833}.btn-outline{border:1px solid #8296af;color:#fff;background:#ffffff0b}.btn-dark{background:var(--navy);color:#fff}.btn-light{background:#edf2f8;color:var(--ink)}.btn-danger{background:#fff0f0;color:var(--red)}
 main{max-width:1050px;margin:26px auto;padding:0 14px}.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 28px #122a4510;padding:22px}.card h2{margin:0 0 6px;font-size:22px}.sub{color:var(--muted);font-size:13px;line-height:1.5;margin:0 0 18px}.section-title{display:flex;align-items:center;gap:10px;margin:0 0 16px}.section-title b{background:#dffaff;color:#08788a;width:34px;height:34px;display:grid;place-items:center;border-radius:10px}
 .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{font-size:13px;font-weight:800;color:#30435b}input,select,textarea{width:100%;border:1px solid #ccd7e4;border-radius:10px;padding:11px 12px;font:inherit;color:var(--ink);background:#fff;outline:none}input:focus,select:focus,textarea:focus{border-color:#d2a923;box-shadow:0 0 0 3px #f6c9432b}textarea{min-height:75px;resize:vertical}.hint{font-size:11px;color:var(--muted)}
 .addressbox{border:1px solid var(--line);padding:13px;border-radius:13px;background:#fbfcfe;display:grid;grid-template-columns:1fr 1fr;gap:10px}.addressbox h3{grid-column:1/-1;margin:0;font-size:14px;color:var(--navy2)}
 .pricebox{background:linear-gradient(135deg,#f2fcfd,#f7fbfc);border:1px dashed #83cbd4;padding:14px;border-radius:13px;margin:15px 0}.pricebox strong{font-size:19px;color:var(--navy2)}.pricebox small{display:block;color:var(--muted);line-height:1.5;margin-top:4px}
-.status{padding:11px 13px;border-radius:11px;font-size:13px;font-weight:800;margin:12px 0;display:none}.status.ok{display:block;background:#e7f7ef;color:#126543}.status.wait{display:block;background:#fff4df;color:#88540c}.status.info{display:block;background:#edf4ff;color:#244e80}.status.err{display:block;background:#fff0f0;color:#a52e2e}
+.status{padding:11px 13px;border-radius:11px;font-size:13px;font-weight:800;margin:12px 0;display:none;line-height:1.5}.status.ok{display:block;background:#e7f7ef;color:#126543}.status.wait{display:block;background:#fff4df;color:#88540c}.status.info{display:block;background:#edf4ff;color:#244e80}.status.err{display:block;background:#fff0f0;color:#a52e2e}
 .sidecard{background:radial-gradient(circle at 90% 0,#087f91 0,transparent 35%),linear-gradient(160deg,#07131d,#12394a);color:#fff;border-radius:18px;padding:22px;box-shadow:0 10px 28px #122a4520}.sidecard h2{color:var(--gold);margin:0 0 8px}.sidecard p{color:#d7e3f1;font-size:13px;line-height:1.6}.contactline{padding:12px 0;border-bottom:1px solid #ffffff22;display:flex;justify-content:space-between;gap:10px;font-size:13px}.contactline:last-of-type{border:0}.sidecard a{color:var(--gold2);font-weight:800;text-decoration:none}.tag{display:inline-block;background:#ffffff16;border:1px solid #ffffff28;border-radius:30px;padding:6px 10px;font-size:11px;color:#fff;margin:4px 4px 0 0}
-.prices{margin-top:20px}.prices h2{margin-bottom:5px}.pricegrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}.route{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.routehead{background:var(--navy2);color:#fff;padding:11px 13px;font-weight:900}.routebody{padding:10px 13px;font-size:12px;line-height:1.8}.routebody div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #edf0f4;padding:3px 0}.routebody div:last-child{border:0}.routebody b{color:#08788a;text-align:right}
 .cancel{margin-top:18px}.admin-access{margin:24px 0 8px;text-align:center;color:#8a96a6;font-size:11px}.admin-access button{border:0;background:none;color:#748196;text-decoration:underline;font-size:11px;cursor:pointer}
 footer{background:var(--navy);color:#b9c8da;text-align:center;padding:22px 14px;font-size:12px;margin-top:32px}footer b{color:var(--gold)}
 .modal{position:fixed;inset:0;background:#061329c9;display:none;align-items:center;justify-content:center;padding:16px;z-index:10}.modal.show{display:flex}.modalbox{background:#fff;border-radius:18px;padding:22px;width:min(760px,100%);max-height:90vh;overflow:auto}.modalhead{display:flex;justify-content:space-between;align-items:center;gap:12px}.modalhead h2{margin:0}.x{border:0;background:#edf1f6;border-radius:9px;padding:7px 11px;cursor:pointer}.adminrow{border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0}.adminrow p{margin:5px 0;font-size:13px;line-height:1.5}.adminrow select{max-width:220px;padding:8px}.notice{background:#fff8e6;border:1px solid #f2d98b;padding:12px;border-radius:11px;color:#745411;font-size:12px;line-height:1.55;margin:12px 0}
-@media(max-width:780px){.grid{grid-template-columns:1fr}.pricegrid{grid-template-columns:1fr}.hero{padding-top:35px}.card{padding:17px}}
+@media(max-width:780px){.grid{grid-template-columns:1fr}.hero{padding-top:35px}.card{padding:17px}}
 @media(max-width:480px){.formgrid,.addressbox{grid-template-columns:1fr}.field.full{grid-column:auto}.topbar{align-items:flex-start;flex-direction:column}.toplinks a{font-size:11px}.hero-actions .btn{flex:1}}
 </style>
 </head>
@@ -51,7 +50,7 @@ footer{background:var(--navy);color:#b9c8da;text-align:center;padding:22px 14px;
 <main>
  <div class="grid">
   <section class="card" id="datxe">
-   <div class="section-title"><b>01</b><div><h2>Thông tin đặt xe</h2><div class="sub" style="margin:0">Điền thông tin để gửi yêu cầu chuyến đi.</div></div></div>
+   <div class="section-title"><b>01</b><div><h2>Thông tin đặt xe</h2><div class="sub" style="margin:0">Điền thông tin để hệ thống gửi tự động về Zalo qua Make.com.</div></div></div>
    <form id="bookingForm">
     <div class="formgrid">
      <div class="field"><label for="name">Họ và tên *</label><input id="name" required placeholder="Tên người đặt"></div>
@@ -93,8 +92,8 @@ footer{background:var(--navy);color:#b9c8da;text-align:center;padding:22px 14px;
     </div>
     <div class="pricebox" id="priceBox"><strong id="priceText">Giá chuyến sẽ tự động hiển thị khi chọn tuyến và dịch vụ</strong><small id="priceNote">Hệ thống tự tính giá theo tuyến và loại dịch vụ bạn chọn. Với tuyến cần báo giá riêng, tài xế sẽ liên hệ xác nhận.</small></div>
     <div id="formStatus" class="status"></div>
-    <button class="btn btn-gold" style="width:100%" type="submit">GỬI YÊU CẦU ĐẶT XE</button>
-    <div class="hint" style="margin-top:9px">Danh mục địa chỉ cũ tải tự động khi có Internet. Giá hiển thị sau khi chọn đủ điểm đón, điểm trả và dịch vụ. Đơn được lưu trên thiết bị này; sau khi gửi, website mở Zalo và sao chép sẵn nội dung đơn để khách dán và bấm Gửi.</div>
+    <button class="btn btn-gold" id="submitBtn" style="width:100%" type="submit">GỬI YÊU CẦU ĐẶT XE</button>
+    <div class="hint" id="legacyAddressStatus" style="margin-top:9px">Đang tải danh mục địa chỉ…</div>
    </form>
   </section>
 
@@ -120,30 +119,23 @@ footer{background:var(--navy);color:#b9c8da;text-align:center;padding:22px 14px;
    <div class="field full"><button class="btn btn-danger" type="submit">YÊU CẦU HỦY CHUYẾN</button></div>
   </form>
   <div id="cancelStatus" class="status"></div>
-  <p class="hint">Đơn đã hủy vẫn được lưu trong lịch sử đặt xe của trình duyệt này, không tự động xóa.</p>
  </section>
  <div class="admin-access"><button type="button" id="adminOpen">Khu vực quản trị</button></div>
 </main>
 
 <footer><b>DỊCH VỤ XE 5.0</b><br>XE GHÉP LƯU LƯƠNG<br>Hotline & Zalo: 0399 679 926</footer>
 
-<datalist id="provinces">
- <option value="Thái Bình"><option value="Hà Nội"><option value="Hải Phòng"><option value="Quảng Ninh">
- <option value="Bắc Ninh"><option value="Bắc Giang"><option value="Nam Định"><option value="Hà Nam"><option value="Hưng Yên">
-</datalist>
-<div class="hint" id="legacyAddressStatus" style="margin:8px 0 14px">Đang tải danh mục địa chỉ hành chính cũ 63 tỉnh/thành → quận/huyện → xã/phường… Cần kết nối Internet lần đầu.</div>
-
 <div class="modal" id="adminModal">
  <div class="modalbox">
   <div class="modalhead"><h2>Quản trị chuyến xe</h2><button class="x" id="adminClose">Đóng ✕</button></div>
   <div id="adminLogin">
-   <div class="notice">Lần đầu mở trang quản trị, hãy tự tạo mật khẩu. Mật khẩu chỉ áp dụng trên trình duyệt/thiết bị này trong bản HTML xem thử.</div>
+   <div class="notice">Lần đầu mở trang quản trị, hãy tự tạo mật khẩu.</div>
    <div class="field"><label for="adminPass">Mật khẩu quản trị</label><input id="adminPass" type="password" placeholder="Nhập mật khẩu"></div>
    <button class="btn btn-dark" id="adminLoginBtn" style="margin-top:12px">Đăng nhập / Tạo mật khẩu</button>
    <div id="adminMsg" class="status"></div>
   </div>
   <div id="adminPanel" style="display:none">
-   <div class="notice">Bản HTML độc lập lưu đơn trên trình duyệt/thiết bị hiện tại. Đơn không tự đồng bộ sang máy khác. Khi khách đặt xe, website mở Zalo và chuẩn bị nội dung để khách dán, bấm Gửi; Zalo không cho website tự gửi tin nhắn thay khách.</div>
+   <div class="notice">Danh sách đơn đặt xe lưu trên trình duyệt này.</div>
    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
     <b id="bookingCount">0 đơn</b><button class="btn btn-light" id="adminLogout">Đăng xuất</button>
    </div>
@@ -153,12 +145,17 @@ footer{background:var(--navy);color:#b9c8da;text-align:center;padding:22px 14px;
 </div>
 
 <script>
+// =========================================================================
+// CẤU HÌNH WEBHOOK MAKE.COM GỬI ĐƠN VỀ ZALO
+// =========================================================================
+const ZALO_WEBHOOK_URL = 'https://hook.eu1.make.com/hw9x0d5dxqf1v7m9bu9nhrgsia9ps9ao';
+const ZALO_PHONE = '0399679926';
+// =========================================================================
+
 const STORE='dvx50_bookings_v1', PASS='dvx50_admin_hash_v1';
 const $=id=>document.getElementById(id);
 const norm=s=>(s||'').toLocaleLowerCase('vi').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').trim();
-// Danh mục địa giới hành chính cũ 63 tỉnh/thành (trước 01/07/2025).
-// Dùng API phân trang có cấu trúc {success,data,metadata}; không dùng API cũ
-// provinces.open-api.vn vốn đã chuyển sang danh mục 34 tỉnh/thành mới.
+
 let legacyAddressData=[];
 const ADDRESS_API='https://www.tinhthanhpho.com/api/v1';
 const ADDRESS_CACHE='xe_ghep_luu_luong_legacy_address_v2';
@@ -170,9 +167,9 @@ function fillSelect(select,items,placeholder){
 }
 async function getAddressJson(url){
  const r=await fetch(url,{headers:{'Accept':'application/json'},cache:'no-store'});
- if(!r.ok)throw new Error('Máy chủ địa chỉ trả về HTTP '+r.status);
+ if(!r.ok)throw new Error('HTTP '+r.status);
  const j=await r.json();
- if(j && j.success===false)throw new Error(j.message||'Nguồn địa chỉ báo lỗi');
+ if(j && j.success===false)throw new Error(j.message||'Lỗi dữ liệu');
  return Array.isArray(j)?j:(Array.isArray(j.data)?j.data:[]);
 }
 async function cachedAddress(key,url){
@@ -191,7 +188,7 @@ function setupAddressSide(side){
    p.districts=rows;
    fillSelect(district,rows.slice().sort((a,b)=>a.name.localeCompare(b.name,'vi')).map(d=>({value:String(d.code),label:(d.type?d.type+' ':'')+d.name})),'Chọn quận / huyện');
    district.disabled=false;
-  }catch(err){fillSelect(district,[],'Không tải được huyện');$('legacyAddressStatus').textContent='Không tải được danh sách quận/huyện: '+err.message;}
+  }catch(err){fillSelect(district,[],'Không tải được huyện');}
   updatePrice();
  });
  district.addEventListener('change',async()=>{
@@ -203,67 +200,59 @@ function setupAddressSide(side){
    d.wards=rows;
    fillSelect(commune,rows.slice().sort((a,b)=>a.name.localeCompare(b.name,'vi')).map(w=>({value:w.name,label:(w.type? w.type+' ':'')+w.name})),'Chọn xã / phường / thị trấn');
    commune.disabled=false;
-  }catch(err){fillSelect(commune,[],'Không tải được xã/phường');$('legacyAddressStatus').textContent='Không tải được danh sách xã/phường: '+err.message;}
+  }catch(err){fillSelect(commune,[],'Không tải được xã/phường');}
   updatePrice();
  });
  commune.addEventListener('change',updatePrice);
 }
 async function loadLegacyAddressData(){
  const status=$('legacyAddressStatus');
- // Khôi phục danh sách tỉnh đã lưu trước đó để dropdown không bị trống khi mở lại.
  if(Array.isArray(addressCache.provinces)&&addressCache.provinces.length>=60){
   legacyAddressData=addressCache.provinces;
   ['from','to'].forEach(side=>{
    fillSelect($(side+'Province'),legacyAddressData.slice().sort((a,b)=>a.name.localeCompare(b.name,'vi')).map(p=>({value:String(p.code),label:(p.type?p.type+' ':'')+p.name})),'Chọn tỉnh / thành phố');
    setupAddressSide(side);$(side+'Province').dataset.addressReady='1';
   });
-  status.textContent='Đã nạp danh sách 63 tỉnh/thành cũ từ bộ nhớ thiết bị. Chọn tỉnh để tải huyện, sau đó chọn huyện để tải xã/phường.';
+  status.textContent='Đã nạp danh sách 63 tỉnh/thành.';
  }
  try{
   const rows=await cachedAddress('provinces',`${ADDRESS_API}/provinces?limit=100&page=1`);
-  if(!Array.isArray(rows)||rows.length<60)throw new Error('Nguồn dữ liệu không trả về đủ 63 tỉnh/thành cũ.');
+  if(!Array.isArray(rows)||rows.length<60)throw new Error('Thiếu dữ liệu tỉnh/thành.');
   legacyAddressData=rows;
   ['from','to'].forEach(side=>{
    const sel=$(side+'Province');
-   // Tránh đăng ký listener lần hai nếu đã khôi phục từ cache.
    if(!sel.dataset.addressReady) {setupAddressSide(side);sel.dataset.addressReady='1';}
    fillSelect(sel,rows.slice().sort((a,b)=>a.name.localeCompare(b.name,'vi')).map(p=>({value:String(p.code),label:(p.type?p.type+' ':'')+p.name})),'Chọn tỉnh / thành phố');
   });
-  status.textContent=`Đã tải thành công ${rows.length} tỉnh/thành cũ. Chọn tỉnh → huyện → xã/phường ở cả điểm đón và điểm trả.`;
+  status.textContent='Sẵn sàng đặt xe.';
  }catch(error){
-  status.textContent='Chưa tải được danh mục địa chỉ 63 tỉnh/thành. Hãy mở lại khi có Internet. Chi tiết: '+error.message;
-  ['from','to'].forEach(side=>{
-   const sel=$(side+'Province');
-   if(!sel.dataset.addressReady){setupAddressSide(side);sel.dataset.addressReady='1';}
-   if(!sel.options.length||sel.options.length===1)fillSelect(sel,[],'Không tải được — nhấn tải lại trang');
-  });
+  status.textContent='Lỗi tải địa chỉ: '+error.message;
  }
 }
 
 const getBookings=()=>{try{return JSON.parse(localStorage.getItem(STORE)||'[]')}catch(e){return []}};
 const saveBookings=a=>localStorage.setItem(STORE,JSON.stringify(a));
-const fmt=n=>new Intl.NumberFormat('vi-VN').format(n)+'đ';
 loadLegacyAddressData();
 const selectedAddressName=id=>{const el=$(id);return (el.selectedOptions[0]?.textContent||'').replace(/^(Tỉnh|Thành phố|Quận|Huyện|Thị xã) /,'');};
-const routeText=()=>[selectedAddressName('fromProvince'),selectedAddressName('fromDistrict'),$('fromCommune').value,selectedAddressName('toProvince'),selectedAddressName('toDistrict'),$('toCommune').value].join(' ');
+
 function routePrice(){
  const a=norm(selectedAddressName('fromProvince')+' '+selectedAddressName('fromDistrict')+' '+$('fromCommune').value);
  const b=norm(selectedAddressName('toProvince')+' '+selectedAddressName('toDistrict')+' '+$('toCommune').value);
  const all=a+' '+b, s=$('service').value;
  const has=(x)=>all.includes(norm(x));
- const tb=has('thai binh'), hn=has('ha noi'), nb=has('noi bai'), hp=has('hai phong'), qn=has('quang ninh'), bn=has('bac ninh'), bg=has('bac giang'), nd=has('nam dinh'), ham=has('ha nam'), hy=has('hung yen');
+ const tb=has('thai binh'), hn=has('ha noi'), nb=has('noi bai'), hp=has('hai phong'), qn=has('quang ninh');
  const hungHa=has('hung ha'), thuyNguyen=has('thuy nguyen'), haLong=has('ha long'), camPha=has('cam pha');
  const pair=(x,y)=> (a.includes(norm(x))&&b.includes(norm(y)))||(a.includes(norm(y))&&b.includes(norm(x)));
  let title='Chờ tài xế báo giá', note='Tuyến này chưa có giá cố định trong bảng giá. Tài xế sẽ liên hệ báo giá.';
  const gh1=s==='Ghép 1 ghế', gh2=s==='Ghép 2 ghế', gh=s.startsWith('Ghép'), bao5=s==='Bao xe 5 chỗ', bao7=s==='Bao xe 7 chỗ', bao=bao5||bao7;
  if((tb&&hn)||pair('thai binh','ha noi')){
   if(gh1) title=hungHa?'250.000đ':'300.000đ';
-  else if(gh2) title=hungHa?'Chờ xác nhận (giá 2 ghế chưa có)':'Chờ xác nhận (giá 2 ghế chưa có)';
-  else if(bao) title=hungHa?'750.000đ (giá bao xe đã cung cấp)':'850.000đ (giá bao xe đã cung cấp)';
-  note='Tuyến Thái Bình – Hà Nội. Giá bao xe 750k/850k là mức chung đã cung cấp; tài xế xác nhận theo loại xe.';
+  else if(gh2) title='Chờ xác nhận (giá 2 ghế chưa có)';
+  else if(bao) title=hungHa?'750.000đ':'850.000đ';
+  note='Tuyến Thái Bình – Hà Nội.';
  }else if(tb&&nb || (tb&&has('noi bai'))){
   if(gh) title=hungHa?'350.000đ':'400.000đ';
-  note='Tuyến Nội Bài: bảng giá hiện có chỉ quy định giá ghép. Các dịch vụ khác chờ tài xế báo giá.';
+  note='Tuyến Nội Bài.';
  }else if(tb&&hp || pair('thai binh','hai phong')){
   if(thuyNguyen){title='Chờ tài xế báo giá';note='Khu vực Thủy Nguyên báo giá riêng.'}
   else if(gh) title='300.000đ';
@@ -297,90 +286,158 @@ function routePrice(){
  if(title==='Chờ tài xế báo giá' && !note.includes('báo giá')) note='Tuyến hoặc dịch vụ này chưa có giá cố định. Tài xế sẽ liên hệ báo giá.';
  return {title,note};
 }
+
 function updatePrice(){
  const ready=$('fromProvince').value && $('fromDistrict').value && $('fromCommune').value && $('toProvince').value && $('toDistrict').value && $('toCommune').value && $('service').value;
  if(!ready){
   $('priceText').textContent='Chọn đủ tỉnh, huyện, xã ở điểm đón và điểm trả cùng loại dịch vụ để xem giá';
-  $('priceNote').textContent='Khi chọn đủ tuyến đường và dịch vụ, hệ thống sẽ tự hiển thị giá tham khảo. Tuyến chưa có giá sẽ ghi rõ chờ tài xế báo giá.';
+  $('priceNote').textContent='Khi chọn đủ tuyến đường và dịch vụ, hệ thống sẽ tự hiển thị giá tham khảo.';
   return;
  }
- const p=routePrice();$('priceText').textContent='Giá chuyến: '+p.title;$('priceNote').textContent=p.note+' Giá được tính theo tuyến và loại dịch vụ đã chọn. Tuyến báo giá riêng sẽ được tài xế liên hệ.';
+ const p=routePrice();$('priceText').textContent='Giá chuyến: '+p.title;$('priceNote').textContent=p.note;
 }
 ['fromProvince','fromDistrict','fromCommune','toProvince','toDistrict','toCommune','fromAddress','toAddress','service'].forEach(id=>{
  $(id).addEventListener('input',updatePrice);$(id).addEventListener('change',updatePrice);
 });
 function showStatus(el,msg,type){el.className='status '+type;el.textContent=msg}
+
 $('shareLocationBtn').addEventListener('click',()=>{
  const status=$('locationStatus');
- if(!navigator.geolocation){
-  status.textContent='Trình duyệt không hỗ trợ lấy vị trí. Bạn có thể nhập địa chỉ đón cụ thể ở phía trên.';
-  return;
- }
+ if(!navigator.geolocation){status.textContent='Trình duyệt không hỗ trợ lấy vị trí.';return;}
  status.textContent='Đang xác định vị trí…';
  navigator.geolocation.getCurrentPosition(pos=>{
   $('currentLat').value=pos.coords.latitude;
   $('currentLng').value=pos.coords.longitude;
-  status.textContent=`Đã lấy vị trí thành công (độ chính xác khoảng ${Math.round(pos.coords.accuracy)} m). Vị trí sẽ được gửi cùng đơn đặt xe.`;
+  status.textContent=`Đã lấy vị trí thành công (chính xác ~${Math.round(pos.coords.accuracy)} m).`;
  },err=>{
-  const messages={1:'Bạn chưa cấp quyền vị trí. Hãy cho phép truy cập vị trí rồi thử lại.',2:'Không xác định được vị trí. Hãy bật GPS và thử lại.',3:'Lấy vị trí quá lâu. Vui lòng thử lại.'};
-  status.textContent=messages[err.code]||'Không lấy được vị trí. Bạn có thể nhập địa chỉ đón cụ thể.';
+  status.textContent='Không lấy được vị trí. Bạn có thể nhập địa chỉ đón cụ thể.';
  },{enableHighAccuracy:true,timeout:15000,maximumAge:0});
 });
+
 function routeKey(o){return norm(o.fromProvince+' '+o.fromDistrict+' '+o.fromCommune)+'>'+norm(o.toProvince+' '+o.toDistrict+' '+o.toCommune)}
-$('bookingForm').addEventListener('submit',e=>{
+
+async function sendOrderToMakeWebhook(eventName, order, summaryText) {
+ if (!ZALO_WEBHOOK_URL) return false;
+ try {
+  const res = await fetch(ZALO_WEBHOOK_URL, {
+   method: 'POST',
+   headers: { 'Content-Type': 'application/json' },
+   body: JSON.stringify({
+    event: eventName,
+    message: summaryText,
+    order: order
+   })
+  });
+  return res.ok;
+ } catch (err) {
+  console.error('Lỗi gửi Webhook Make.com:', err);
+  return false;
+ }
+}
+
+$('bookingForm').addEventListener('submit', async e => {
  e.preventDefault();
+ const submitBtn = $('submitBtn');
+ submitBtn.disabled = true;
+ submitBtn.textContent = 'ĐANG GỬI ĐƠN VỀ ZALO...';
+
  const phone=$('phone').value.replace(/\s/g,'');
  const p=routePrice();
  const order={
-  code:'DVX-'+Math.floor(100000+Math.random()*900000),name:$('name').value.trim(),phone,
-  fromProvince:$('fromProvince').selectedOptions[0]?.textContent.replace(/^(Tỉnh|Thành phố) /,'')||'',fromDistrict:$('fromDistrict').selectedOptions[0]?.textContent.replace(/^(Quận|Huyện|Thị xã|Thành phố) /,'')||'',fromCommune:$('fromCommune').value.trim(),fromAddress:$('fromAddress').value.trim(),
-  toProvince:$('toProvince').selectedOptions[0]?.textContent.replace(/^(Tỉnh|Thành phố) /,'')||'',toDistrict:$('toDistrict').selectedOptions[0]?.textContent.replace(/^(Quận|Huyện|Thị xã|Thành phố) /,'')||'',toCommune:$('toCommune').value.trim(),toAddress:$('toAddress').value.trim(),
-  date:$('date').value,time:$('time').value,service:$('service').value,note:$('note').value.trim(),
-  price:p.title,priceNote:p.note,
-  currentLat:$('currentLat').value||'',currentLng:$('currentLng').value||'',
-  created:new Date().toISOString(),status:'Đã tiếp nhận chuyến'
+  code:'DVX-'+Math.floor(100000+Math.random()*900000),
+  name:$('name').value.trim(),
+  phone,
+  fromProvince:$('fromProvince').selectedOptions[0]?.textContent.replace(/^(Tỉnh|Thành phố) /,'')||'',
+  fromDistrict:$('fromDistrict').selectedOptions[0]?.textContent.replace(/^(Quận|Huyện|Thị xã|Thành phố) /,'')||'',
+  fromCommune:$('fromCommune').value.trim(),
+  fromAddress:$('fromAddress').value.trim(),
+  toProvince:$('toProvince').selectedOptions[0]?.textContent.replace(/^(Tỉnh|Thành phố) /,'')||'',
+  toDistrict:$('toDistrict').selectedOptions[0]?.textContent.replace(/^(Quận|Huyện|Thị xã|Thành phố) /,'')||'',
+  toCommune:$('toCommune').value.trim(),
+  toAddress:$('toAddress').value.trim(),
+  date:$('date').value,
+  time:$('time').value,
+  service:$('service').value,
+  note:$('note').value.trim(),
+  price:p.title,
+  priceNote:p.note,
+  currentLat:$('currentLat').value||'',
+  currentLng:$('currentLng').value||'',
+  created:new Date().toISOString(),
+  status:'Đã tiếp nhận chuyến'
  };
+
  const arr=getBookings();
  const collision=arr.some(x=>x.status!=='Đã hủy'&&x.date===order.date&&routeKey(x)===routeKey(order)&&Math.abs((+new Date(x.date+'T'+x.time))-(+new Date(order.date+'T'+order.time)))<=90*60000);
  if(collision)order.status='Chờ lái xe nhận';
  arr.unshift(order);saveBookings(arr);
- const msg=`Đã lưu đơn đặt xe trên thiết bị này. Mã chuyến: ${order.code}. Trạng thái: ${order.status}. Giá chuyến: ${order.price}. Nội dung đơn đã được chuẩn bị để gửi qua Zalo.`;
- showStatus($('formStatus'),msg,collision?'wait':'ok');
- const summary=`XE GHÉP LƯU LƯƠNG – YÊU CẦU ĐẶT XE\nMã chuyến: ${order.code}\nKhách hàng: ${order.name}\nSố điện thoại: ${order.phone}\nĐiểm đón: ${order.fromProvince}, ${order.fromDistrict}, ${order.fromCommune} ${order.fromAddress}\nĐiểm trả: ${order.toProvince}, ${order.toDistrict}, ${order.toCommune} ${order.toAddress}\nNgày giờ: ${order.date} ${order.time}\nDịch vụ: ${order.service}\nGIÁ CHUYẾN: ${order.price}\nGhi chú giá: ${order.priceNote}\nVị trí GPS: ${order.currentLat&&order.currentLng?`https://www.google.com/maps/search/?api=1&query=${order.currentLat}%2C${order.currentLng}`:'Khách chưa chia sẻ'}\nTrạng thái: ${order.status}`;
- // Mở cuộc trò chuyện Zalo ngay sau khi lưu đơn; trình duyệt không cho website tự bấm nút Gửi thay khách.
- const zaloUrl='https://zalo.me/0399679926';
- const zaloTab=window.open(zaloUrl,'_blank','noopener');
- const copyText=async()=>{
-  try{await navigator.clipboard.writeText(summary);return true;}catch(err){
-   try{const ta=document.createElement('textarea');ta.value=summary;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();const ok=document.execCommand('copy');ta.remove();return ok;}catch(e){return false;}
-  }
- };
- copyText().then(ok=>{
-  const extra=document.createElement('div');extra.style.marginTop='10px';
-  const info=document.createElement('div');info.className='hint';info.textContent=ok?'Đã sao chép nội dung đơn (kèm giá). Mở Zalo và dán vào khung chat rồi bấm Gửi.':'Đơn đã lưu. Hãy dùng nút bên dưới để mở Zalo; bạn có thể xem lại đơn trong quản trị.';
-  const link=document.createElement('a');link.className='btn btn-gold';link.href=zaloUrl;link.target='_blank';link.rel='noopener';link.textContent='MỞ ZALO GỬI ĐƠN ĐẶT XE';link.style.marginTop='8px';
-  extra.append(info,link);$('formStatus').appendChild(extra);
- });
+
+ const gpsLink = order.currentLat && order.currentLng 
+  ? `https://www.google.com/maps/search/?api=1&query=${order.currentLat},${order.currentLng}` 
+  : 'Chưa chia sẻ';
+
+ const summary = `🚖 ĐƠN ĐẶT XE MỚI (${order.code})
+👤 Khách: ${order.name} - ${order.phone}
+📍 Đón: ${[order.fromAddress, order.fromCommune, order.fromDistrict, order.fromProvince].filter(Boolean).join(', ')}
+🏁 Trả: ${[order.toAddress, order.toCommune, order.toDistrict, order.toProvince].filter(Boolean).join(', ')}
+⏰ Thời gian: ${order.time} ngày ${order.date}
+🚘 Dịch vụ: ${order.service}
+💰 Giá: ${order.price}
+📝 Ghi chú: ${order.note || 'Không có'}
+🗺️ Vị trí GPS: ${gpsLink}`;
+
+ const sent = await sendOrderToMakeWebhook('new_booking', order, summary);
+
+ if (sent) {
+  showStatus($('formStatus'), `✅ ĐẶT XE THÀNH CÔNG! Mã chuyến: ${order.code}. Đơn đã tự động gửi về hệ thống qua Make.com để chuyển tới Zalo nhà xe.`, 'ok');
+ } else {
+  const zaloDeepLink = `https://zalo.me/${ZALO_PHONE}?text=${encodeURIComponent(summary)}`;
+  try { await navigator.clipboard.writeText(summary); } catch (err) {}
+  showStatus($('formStatus'), `✅ Đã lưu mã chuyến ${order.code} (${order.price}). Chưa kết nối được Webhook tự động, bạn có thể bấm nút bên dưới để mở Zalo gửi đơn.`, collision ? 'wait' : 'ok');
+  const extra = document.createElement('div');
+  extra.style.marginTop = '10px';
+  const link = document.createElement('a');
+  link.className = 'btn btn-gold';
+  link.href = zaloDeepLink;
+  link.target = '_blank';
+  link.rel = 'noopener';
+  link.textContent = '📲 MỞ ZALO GỬI ĐƠN ĐẶT XE';
+  extra.appendChild(link);
+  $('formStatus').appendChild(extra);
+ }
+
+ submitBtn.disabled = false;
+ submitBtn.textContent = 'GỬI YÊU CẦU ĐẶT XE';
+
  $('bookingForm').reset();
  ['from','to'].forEach(side=>{ $(side+'District').disabled=true;$(side+'Commune').disabled=true;fillSelect($(side+'District'),[],'Chọn tỉnh trước');fillSelect($(side+'Commune'),[],'Chọn huyện trước'); });
- $('locationStatus').textContent='Bấm nút và cho phép trình duyệt truy cập vị trí. Tọa độ sẽ được gửi kèm đơn để tài xế mở trên Google Maps.';
+ $('locationStatus').textContent='Bấm nút và cho phép trình duyệt truy cập vị trí.';
  updatePrice();
  $('cancelCode').value=order.code;$('cancelPhone').value=order.phone;
 });
-$('cancelForm').addEventListener('submit',e=>{
+
+$('cancelForm').addEventListener('submit', async e=>{
  e.preventDefault();const code=$('cancelCode').value.trim().toUpperCase(),phone=$('cancelPhone').value.replace(/\s/g,'');
  const arr=getBookings(),i=arr.findIndex(x=>x.code.toUpperCase()===code&&x.phone.replace(/\s/g,'')===phone);
  if(i<0){showStatus($('cancelStatus'),'Không tìm thấy chuyến phù hợp. Vui lòng kiểm tra mã chuyến và số điện thoại.', 'err');return}
- if(arr[i].status==='Đã hủy'){showStatus($('cancelStatus'),'Chuyến này đã được hủy trước đó. Thông tin đặt xe vẫn được lưu.','info');return}
+ if(arr[i].status==='Đã hủy'){showStatus($('cancelStatus'),'Chuyến này đã được hủy trước đó.','info');return}
  arr[i].status='Đã hủy';arr[i].cancelled=new Date().toISOString();saveBookings(arr);
- showStatus($('cancelStatus'),'Đã ghi nhận yêu cầu hủy chuyến. Thông tin và số điện thoại đặt xe vẫn được lưu trong lịch sử.','ok');
+
+ const cancelMsg = `❌ KHÁCH HỦY CHUYẾN (${arr[i].code})\n👤 Khách: ${arr[i].name} - ${arr[i].phone}\n⏰ Lịch cũ: ${arr[i].time} ngày ${arr[i].date}`;
+ const sent = await sendOrderToMakeWebhook('cancel_booking', arr[i], cancelMsg);
+
+ if (sent) {
+  showStatus($('cancelStatus'),'Đã hủy chuyến và gửi thông báo tự động qua Make.com.','ok');
+ } else {
+  showStatus($('cancelStatus'),'Đã ghi nhận hủy chuyến trên thiết bị này.','ok');
+ }
 });
+
 async function hash(s){
  if(globalThis.crypto&&crypto.subtle){
   const data=new TextEncoder().encode(s),buf=await crypto.subtle.digest('SHA-256',data);
   return [...new Uint8Array(buf)].map(x=>x.toString(16).padStart(2,'0')).join('');
  }
- // Fallback for browsers that open this page directly from a local file.
  let h=2166136261;
  for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}
  return 'local-'+(h>>>0).toString(16);
@@ -410,10 +467,6 @@ function renderAdmin(){
    mapLink.href=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(o.currentLat+','+o.currentLng)}`;
    mapLink.target='_blank';mapLink.rel='noopener';mapLink.textContent='📍 MỞ VỊ TRÍ KHÁCH TRÊN GOOGLE MAPS';
    mapLink.style.margin='8px 0';div.appendChild(mapLink);
-   const coord=document.createElement('p');coord.className='hint';
-   coord.textContent=`Tọa độ: ${o.currentLat}, ${o.currentLng}`;div.appendChild(coord);
-  }else{
-   const noLoc=document.createElement('p');noLoc.className='hint';noLoc.textContent='Khách chưa chia sẻ vị trí GPS.';div.appendChild(noLoc);
   }
   div.appendChild(status);list.appendChild(div);
  });
@@ -423,4 +476,4 @@ const today=new Date();$('date').min=new Date(today.getTime()-today.getTimezoneO
 updatePrice();
 </script>
 </body>
-  </html>
+</html>
